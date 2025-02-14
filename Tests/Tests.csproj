@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <OutputType>Library</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>MassiveTests</AssemblyName>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>Massive.Tests</RootNamespace>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>$(DefineConstants);MASSIVE_DISABLE_ASSERT</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Performance\**" />
+    <EmbeddedResource Remove="Performance\**" />
+    <None Remove="**\*.meta" />
+    <None Remove="Performance\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Registry\RegistryIntegrationTests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.13.0" />
+    <PackageReference Include="Microsoft.TestPlatform.TestHost" Version="17.13.0" />
+    <PackageReference Include="NUnit" Version="3.14.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="5.0.0" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Runtime\Massive-ECS.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Performance\" />
+  </ItemGroup>
+</Project>
