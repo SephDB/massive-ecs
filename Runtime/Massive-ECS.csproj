@@ -4,11 +4,13 @@
     <OutputType>Library</OutputType>
     <NoStandardLibraries>false</NoStandardLibraries>
     <AssemblyName>MassiveCore</AssemblyName>
+	<RepositoryUrl>https://github.com/SephDB/massive-ecs</RepositoryUrl>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
   <PropertyGroup>
     <RootNamespace>Massive</RootNamespace>
     <Nullable>disable</Nullable>
+    <AssemblyVersion></AssemblyVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DefineConstants>$(DefineConstants);MASSIVE_DISABLE_ASSERT</DefineConstants>
